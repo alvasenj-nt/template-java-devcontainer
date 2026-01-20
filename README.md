@@ -64,3 +64,16 @@ A partir de ahora, te encuentras en un entorno Linux con Java 17 y Maven totalme
     -   Puedes ejecutar todos los tests de la clase haciendo clic en el icono de "play" que aparece al lado del nombre de la clase.
 
 ¡Feliz codificación!
+
+---
+
+## 🔁 ¿Cómo empiezo el siguiente ejercicio?
+
+La regla de oro es: **cada ejercicio nuevo empieza desde la plantilla original del profesor.**
+
+No reutilices el repositorio de un ejercicio anterior para empezar uno nuevo. Sigue estos pasos:
+
+1.  Ve a la página del repositorio **original** que te proporcionó el profesor.
+2.  Repite el proceso: haz clic en `Use this template` para crear **otro** repositorio nuevo en tu cuenta (p. ej., `ejercicio-2`).
+3.  Clona este nuevo repositorio en tu ordenador (en una carpeta diferente).
+4.  ¡A trabajar!
