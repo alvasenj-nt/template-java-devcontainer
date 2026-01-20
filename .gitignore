@@ -1,0 +1,19 @@
+# Artefactos de compilación de Maven
+target/
+
+# Ficheros de log
+*.log
+
+# Volcados de memoria de la JVM
+hs_err_pid*
+
+# Ficheros del sistema operativo
+.DS_Store
+
+# Ficheros de configuración local de IDEs (práctica recomendada)
+.vscode/
+.idea/
+*.iml
+
+# Fichero temporal creado por el Dev Container al finalizar la inicialización
+.init_done

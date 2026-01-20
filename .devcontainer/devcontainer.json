@@ -1,0 +1,44 @@
+{
+    "name": "Java para FP",
+    // Le decimos a VS Code que construya una imagen a partir de nuestro Dockerfile.
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "..",
+        "args": {
+            "USERNAME": "${localEnv:USER}"
+        }
+    },
+
+    // Extensiones que se instalarán automáticamente DENTRO del contenedor.
+    // Este es el paquete oficial de Microsoft para desarrollo en Java.
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "vscjava.vscode-java-pack", // Pack completo para Java
+                "esbenp.prettier-vscode",   // (Opcional) Un formateador de código
+                "MS-CEINTL.vscode-language-pack-es" // (Opcional) Paquete de idioma español para VS Code
+            ],
+            // Configuraciones del editor que se aplicarán en este entorno.
+            "settings": {
+                "java.debug.settings.onBuildFailureProceed": true,
+                "editor.tabSize": 4,
+                "files.encoding": "utf8"
+            }
+        }
+    },
+
+    // Mapea el código fuente local al directorio /workspace dentro del contenedor.
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/vscode/workspace,type=bind,consistency=cached",
+    "workspaceFolder": "/home/vscode/workspace",
+
+    // Para evitar que el contenedor se cierre al cerrar VS Code
+    "runArgs": ["--name=devcontainer-java-fp", "--rm"],
+    "shutdownAction": "stopContainer",
+
+
+    // Crea un 'launch.json' por defecto para que los alumnos puedan depurar sin configurar nada.
+    "postCreateCommand": "mvn compile && touch ./.init_done",
+
+    // El usuario que se usará dentro del contenedor (el mismo que creamos en el Dockerfile).
+    "remoteUser": "vscode"
+}
